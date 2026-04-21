@@ -728,17 +728,24 @@ nav.scrolled .nav-links a {
 /* breakpoint*/
 @media (max-width: 768px) {
   #hero { grid-template-columns: 1fr; }
-  .hero-right { min-height: 50vw; display: none; }
+  .hero-right { min-height: 50vh; display: block; }
   #words { grid-template-columns: 1fr; }
   .memories-grid { grid-template-columns: 1fr 1fr; }
   .mem-card.tall, .mem-card.wide { grid-column: span 1; grid-row: span 1; }
-  #progress { height: 3px; }
+  #progress { height: 4px; top: 0; }
+  nav { padding: clamp(12px, 2vw, 16px) clamp(16px, 3vw, 24px); }
+  .nav-logo { font-size: clamp(13px, 1.8vw, 18px); }
+  nav .nav-links { display: flex !important; gap: clamp(8px, 2vw, 16px); }
+  .nav-links a { font-size: clamp(7px, 0.9vw, 9px); letter-spacing: 0.2em; }
 }
 
 @media (max-width: 480px) {
   .memories-grid { grid-template-columns: 1fr; }
-  nav .nav-links { display: none; }
-  .closing-img-row { grid-template-columns: repeat(3, 1fr); }
+  nav .nav-links { display: flex; gap: clamp(8px, 2vw, 16px); }
+  .nav-links a { font-size: clamp(8px, 0.8vw, 9px); }
+  .closing-img-row { grid-template-columns: repeat(2, 1fr); }
+  .hero-right { min-height: 45vh; }
+  #progress { height: 5px; }
 }
 
 /* AJUSTES PARA CELULAR VERTICAL */
