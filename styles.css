@@ -202,6 +202,41 @@ nav.scrolled .nav-links a {
   width: fit-content;
 }
 
+/* Indicador de desplazamiento */
+.scroll-hint {
+  position: absolute;
+  bottom: clamp(24px,4vw,40px);
+  left: clamp(32px,6vw,80px);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 9px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--grey-dark);
+}
+.scroll-arrow {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  animation: bounce 2s infinite;
+}
+.scroll-arrow span {
+  display: block;
+  width: 1px;
+  background: var(--grey-mid);
+}
+.scroll-arrow span:nth-child(1) { height: 16px; margin-left: 4px; }
+.scroll-arrow span:nth-child(2) {
+  width: 7px;
+  height: 7px;
+  border-right: 1px solid var(--grey-mid);
+  border-bottom: 1px solid var(--grey-mid);
+  transform: rotate(45deg);
+  margin-top: -5px;
+  background: transparent;
+}
+
 .hero-right {
   position: relative;
   overflow: hidden;
@@ -240,45 +275,6 @@ nav.scrolled .nav-links a {
   line-height: 1;
   pointer-events: none;
   user-select: none;
-}
-
-/* Indicador de desplazamiento */
-.scroll-hint {
-  position: absolute;
-  bottom: clamp(24px,4vw,40px);
-  left: clamp(32px,6vw,80px);
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 9px;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: var(--grey-dark);
-}
-.scroll-arrow {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  animation: bounce 2s infinite;
-}
-.scroll-arrow span {
-  display: block;
-  width: 1px;
-  background: var(--grey-mid);
-}
-.scroll-arrow span:nth-child(1) { height: 16px; margin-left: 4px; }
-.scroll-arrow span:nth-child(2) {
-  width: 7px;
-  height: 7px;
-  border-right: 1px solid var(--grey-mid);
-  border-bottom: 1px solid var(--grey-mid);
-  transform: rotate(45deg);
-  margin-top: -5px;
-  background: transparent;
-}
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(5px); }
 }
 
 /* SECCIÓN 2: CITA ANCHO COMPLETO */
@@ -736,6 +732,7 @@ nav.scrolled .nav-links a {
   #words { grid-template-columns: 1fr; }
   .memories-grid { grid-template-columns: 1fr 1fr; }
   .mem-card.tall, .mem-card.wide { grid-column: span 1; grid-row: span 1; }
+  #progress { height: 3px; }
 }
 
 @media (max-width: 480px) {
