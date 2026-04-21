@@ -730,9 +730,32 @@ nav.scrolled .nav-links a {
 }
 
 /* breakpoint*/
+
 @media (max-width: 768px) {
-  #hero { grid-template-columns: 1fr; }
-  .hero-right { min-height: 50vw; display: none; }
+  #hero { 
+    grid-template-columns: 1fr; 
+    display: flex;
+    flex-direction: column; 
+  }
+
+  .hero-left {
+    order: 2; 
+    padding: 40px 24px;
+    background: var(--white);
+  }
+
+  .hero-right { 
+    display: block; 
+    order: 1; 
+    height: 50vh; 
+    min-height: 350px;
+  }
+
+  .hero-img-slot {
+    height: 100%;
+    min-height: auto; 
+  }
+
   #words { grid-template-columns: 1fr; }
   .memories-grid { grid-template-columns: 1fr 1fr; }
   .mem-card.tall, .mem-card.wide { grid-column: span 1; grid-row: span 1; }
